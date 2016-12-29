@@ -19,10 +19,49 @@
    ================================================== -->
    <link rel="stylesheet" href="css/base.css">  
    <link rel="stylesheet" href="css/main.css">
-   <link rel="stylesheet" href="css/vendor.css">     
+   <link rel="stylesheet" href="css/vendor.css">  
+   <link rel="stylesheet" href="css/sigininbox.css">
 
    <!-- script
    ================================================== -->
+
+	<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyCoJAhJG5ks86-eX7B5Snt6UHlw4MvPboc",
+	    authDomain: "fyp4-d9796.firebaseapp.com",
+	    databaseURL: "https://fyp4-d9796.firebaseio.com",
+	    storageBucket: "fyp4-d9796.appspot.com",
+	    messagingSenderId: "977086411556"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+
+	 <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: '<url-to-redirect-to-on-success>',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+          firebase.auth.GithubAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        tosUrl: '<your-tos-url>'
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+
 	<script src="js/modernizr.js"></script>
 
    <!-- favicons
@@ -50,7 +89,7 @@
 					<li><a class="smoothscroll"  href="#features" title="">Features</a></li>
 					<li><a class="smoothscroll"  href="#pricing" title="">Pricing</a></li>
 					<li><a class="smoothscroll"  href="#faq" title="">FAQ</a></li>					
-					<li class="highlight with-sep"><a href="#" title="">Sign Up</a></li>					
+					<li><button onclick="myfunction()" class="dropbtn"> Sign Up </button>  <div id="firebaseui-auth-container" class="dropdown-content"></div></li>					
 				</ul>
 			</nav>
 
@@ -75,8 +114,8 @@
 	   				<a href="#video-popup"><img src="images/play-button.png" alt=""></a>
 	   			</div>
 
-	   			<h5>Hello welcome to lhander.</h5>
-	   			<h1>Our awesome app will make your life a lot easier.</h1>
+	   			<h5>Hello welcome to viewer.</h5>
+	   			<h1>Our 3D model viewer are different from the others .</h1>
 
 	   			<a class="button stroke smoothscroll" href="#process" title="">Learn More</a>
 
@@ -111,7 +150,7 @@
    			<h5>Process</h5>
    			<h1>How it works?</h1>
 
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+   			<p class="lead">Just few simple steps to get start with our viewer.</p>
 
    		</div>   		
    	</div>
@@ -124,7 +163,7 @@
 
    				<h5>Sign Up</h5>
 
-   				<p>Lorem ipsum Cupidatat nostrud non cupidatat ut dolor id eiusmod non minim aute consectetur incididunt tempor irure aute consequat quis voluptate.</p>
+   				<p>If you do not have a account, you will have to sign up first. On the top right hand corner of the web page, there is a sign up button for you . </p>
    					
    			</div>
 
@@ -132,8 +171,7 @@
 
 	   			<h5>Upload</h5>
 
-	   			<p>Lorem ipsum Cupidatat nostrud non cupidatat ut dolor id eiusmod non minim aute consectetur incididunt tempor irure aute consequat quis voluptate.</p>
-   					
+	   			<p>Once you logged in, you can now upload any 3D model to our database as you want. There is a upload button on top of the navigation bar, click it and choose which file you want to upload.</p>
    			</div>
    				
    		</div> <!-- /left-side -->
@@ -279,6 +317,11 @@
 		
 	</section> <!-- /features -->
 	
+
+<!-- signing
+   ================================================== -->
+   
+   <div id="firebaseui-auth-container"></div>
 
 	<!-- pricing
    ================================================== -->
