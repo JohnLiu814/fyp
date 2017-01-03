@@ -38,6 +38,28 @@
 	  firebase.initializeApp(config);
 	</script>
 
+	 <!-- firebase server-->
+	 <script>
+	 	var FirebaseServer = require('firebase-server');
+ 	
+			new FirebaseServer(5000, 'localhost.firebaseio.test', {
+    			states: {
+    			    CA: 'California',
+    			    AL: 'Alabama',
+    			    KY: 'Kentucky'
+   			 }
+			});
+
+
+			var client = new Firebase('ws://localhost.firebaseio.test:5000');
+			client.on('value', function(snap) {
+    		console.log('Got value: ', snap.val());
+		});
+	</script>
+
+	 <!-- ==================================================== -->
+
+
 	 <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
     <script type="text/javascript">
@@ -46,10 +68,10 @@
         signInSuccessUrl: '<url-to-redirect-to-on-success>',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
-          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
           firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-          firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-          firebase.auth.GithubAuthProvider.PROVIDER_ID,
+          //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+          //firebase.auth.GithubAuthProvider.PROVIDER_ID,
           firebase.auth.EmailAuthProvider.PROVIDER_ID
         ],
         // Terms of service url.
@@ -74,6 +96,27 @@
 
 	<!-- header 
    ================================================== -->
+   <!-- facebook sdk -->
+   <script>
+  	window.fbAsyncInit = function() {
+  	  FB.init({
+  	    appId      : '1214170605328550',
+  	    xfbml      : true,
+  	    version    : 'v2.8'
+  	  });
+  	};
+
+  	(function(d, s, id){
+  	   var js, fjs = d.getElementsByTagName(s)[0];
+  	   if (d.getElementById(id)) {return;}
+  	   js = d.createElement(s); js.id = id;
+  	   js.src = "//connect.facebook.net/en_US/sdk.js";
+  	   fjs.parentNode.insertBefore(js, fjs);
+  	 }(document, 'script', 'facebook-jssdk'));
+	</script>
+
+
+
    <header>
 
    	<div class="row">
@@ -89,7 +132,7 @@
 					<li><a class="smoothscroll"  href="#features" title="">Features</a></li>
 					<li><a class="smoothscroll"  href="#pricing" title="">Pricing</a></li>
 					<li><a class="smoothscroll"  href="#faq" title="">FAQ</a></li>					
-					<li><button onclick="myfunction()" class="dropbtn"> Sign Up </button>  <div id="firebaseui-auth-container" class="dropdown-content"></div></li>					
+					<li class="highlight with-sep"><a href="#" id="dropbox" onclick="myFunction()"> Sign Up </a><div id="firebaseui-auth-container" class="dropdown-content" style="display:none"></div></li>				
 				</ul>
 			</nav>
 
