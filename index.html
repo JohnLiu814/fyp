@@ -20,62 +20,44 @@
    <link rel="stylesheet" href="css/base.css">  
    <link rel="stylesheet" href="css/main.css">
    <link rel="stylesheet" href="css/vendor.css">  
-   <link rel="stylesheet" href="css/sigininbox.css">
+   <!--<link rel="stylesheet" href="css/sigininbox.css">-->
 
    <!-- script
    ================================================== -->
 
-	<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyCoJAhJG5ks86-eX7B5Snt6UHlw4MvPboc",
-	    authDomain: "fyp4-d9796.firebaseapp.com",
-	    databaseURL: "https://fyp4-d9796.firebaseio.com",
-	    storageBucket: "fyp4-d9796.appspot.com",
-	    messagingSenderId: "977086411556"
-	  };
-	  firebase.initializeApp(config);
-	</script>
 
-	 <!-- firebase server-->
-	 <script>
-	 	var FirebaseServer = require('firebase-server');
- 	
-			new FirebaseServer(5000, 'localhost.firebaseio.test', {
-    			states: {
-    			    CA: 'California',
-    			    AL: 'Alabama',
-    			    KY: 'Kentucky'
-   			 }
-			});
-
-
-			var client = new Firebase('ws://localhost.firebaseio.test:5000');
-			client.on('value', function(snap) {
-    		console.log('Got value: ', snap.val());
-		});
-	</script>
-
-	 <!-- ==================================================== -->
-
-
+<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCoJAhJG5ks86-eX7B5Snt6UHlw4MvPboc",
+    authDomain: "fyp4-d9796.firebaseapp.com",
+    databaseURL: "https://fyp4-d9796.firebaseio.com",
+    storageBucket: "fyp4-d9796.appspot.com",
+    messagingSenderId: "977086411556"
+  };
+  firebase.initializeApp(config);
+</script>
+	
+	
+	
+	
 	 <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
     <script type="text/javascript">
       // FirebaseUI config.
       var uiConfig = {
-        signInSuccessUrl: '<url-to-redirect-to-on-success>',
+        signInSuccessUrl: 'index.html',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
           //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
           //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-          //firebase.auth.GithubAuthProvider.PROVIDER_ID,
+         // firebase.auth.GithubAuthProvider.PROVIDER_ID,
           firebase.auth.EmailAuthProvider.PROVIDER_ID
         ],
         // Terms of service url.
-        tosUrl: '<your-tos-url>'
+        tosUrl: ''
       };
 
       // Initialize the FirebaseUI Widget using Firebase.
@@ -96,30 +78,9 @@
 
 	<!-- header 
    ================================================== -->
-   <!-- facebook sdk -->
-   <script>
-  	window.fbAsyncInit = function() {
-  	  FB.init({
-  	    appId      : '1214170605328550',
-  	    xfbml      : true,
-  	    version    : 'v2.8'
-  	  });
-  	};
-
-  	(function(d, s, id){
-  	   var js, fjs = d.getElementsByTagName(s)[0];
-  	   if (d.getElementById(id)) {return;}
-  	   js = d.createElement(s); js.id = id;
-  	   js.src = "//connect.facebook.net/en_US/sdk.js";
-  	   fjs.parentNode.insertBefore(js, fjs);
-  	 }(document, 'script', 'facebook-jssdk'));
-	</script>
-
-
-
    <header>
 
-   	<div class="row">
+   	<p class="row">
 
    		<div class="logo">
 	         <a href="index.html">Lhander</a>
@@ -132,15 +93,46 @@
 					<li><a class="smoothscroll"  href="#features" title="">Features</a></li>
 					<li><a class="smoothscroll"  href="#pricing" title="">Pricing</a></li>
 					<li><a class="smoothscroll"  href="#faq" title="">FAQ</a></li>					
-					<li class="highlight with-sep"><a href="#" id="dropbox" onclick="myFunction()"> Sign Up </a><div id="firebaseui-auth-container" class="dropdown-content" style="display:none"></div></li>				
+					
+					<li class="highlight with-sep"><a href="#" id="dropbox" onclick=myFunction()> Login/SignUp</a>
+						<div class="container" id="LoginSignupform" style="display:none">
+							<input id="txtEmail" type="email" placeholder="Email">
+							<input id="txtPassword" type="password" placeholder="Password">
+							<button id ="btnLogin" class="btn btn-action">Log in </button>
+							<button id ="btnSignUp" class="btn btn-secondary">Sign Up</button>
+							<button id ="btnLogout" class="btn btn-action hide">Log out</button>
+						</div>
+					</li>	
+					
+
+				<!--
+					<li class="highlight with-sep"><a href="#" id="dropbox" onclick=myFunction()> Sign Up</a><div id="firebaseui-auth-container" class="dropdown-content" style="display:none"></div></li>		-->			
 				</ul>
 			</nav>
 
 			<a class="menu-toggle" href="#"><span>Menu</span></a>
    		
-   	</div>   	
+
    	
+       
+
    </header> <!-- /header -->
+
+	<!-- user section -->
+	<section id="user" style="display:">
+	<div id="file">
+		<progress value="0" max="100" id="uploader">0%</progress>
+		<input type="file" value="upload" id="fileButton" />
+	</div>
+
+	<div id-"display">
+	</div>
+
+	</section>
+
+	<!-- ==================================== -->
+
+
 
 	<!-- intro section
    ================================================== -->
@@ -364,7 +356,7 @@
 <!-- signing
    ================================================== -->
    
-   <div id="firebaseui-auth-container"></div>
+   <!--<div id="firebaseui-auth-container"></div>-->
 
 	<!-- pricing
    ================================================== -->
@@ -811,7 +803,8 @@
    <script src="js/jquery-migrate-1.2.1.min.js"></script>
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
-
+   <script src="js/app.js"></script>
+   <script src="user.js"></script>
 </body>
 
 </html>

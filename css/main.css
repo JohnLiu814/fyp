@@ -904,17 +904,25 @@ a.menu-toggle {
 .main-navigation {
 	min-height: 66px;
 	display: inline-block;
-	width: auto;
+	width:auto;
 	text-align: left;
 }
 .main-navigation li {
-	position: relative;
+	position:relative;
 	display: inline-block;
 	list-style: none;
 	padding: 0;
 	margin: 0;
 	height: 66px;
+    vertical-align:top;
 }
+
+.dropdown-content{
+    position:absolute;
+    width:370px;
+    right:0px;
+}
+  
 .main-navigation li.current a {
 	color: #FFFFFF;
 }
