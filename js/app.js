@@ -15,7 +15,7 @@
 	  	const pass = txtPassword.value;
 	  	const auth = firebase.auth();
 	  	// Sign in
-	  	auth.signInWithEmailAndPassword(email, pass);
+	  	const promise = auth.signInWithEmailAndPassword(email, pass);
 	 	promise.catch(e => console.log(e.message));
 
 	  });
@@ -29,7 +29,7 @@
 	  	const pass = txtPassword.value;
 	  	const auth = firebase.auth();
 	  	// Sign in
-	  	auth.createUserWithEmailAndPassword(email, pass);
+	  	const promise = auth.createUserWithEmailAndPassword(email, pass);
 	 	promise.catch(e => console.log(e.message));
 
 	  });
