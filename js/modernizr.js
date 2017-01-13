@@ -5,20 +5,29 @@ window.Modernizr=function(a,b,c){function u(a){j.cssText=a}function v(a,b){retur
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
+/*
 function myFunction() {
     //document.getElementById("firebaseui-auth-container").style.display = 'block';
     document.getElementById("LoginSignupform").style.display='block';
 }
 
 
+*/
 
 
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('#dropbox')) {
 
-    //  document.getElementsByClassName("dropdown-content")[0].style.display = 'none';
 
-  }
-}
+$('html').click(function() {
+   $('#LoginSignupform').hide(); 
+});
+
+$('.highlight with-sep').click(function(event){
+     event.stopPropagation();
+});
+
+$('#dropbox').click(function(event){
+	window.alert("hi");
+     $('#LoginSignupform').toggle();
+});
+

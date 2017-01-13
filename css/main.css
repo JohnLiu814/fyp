@@ -45,6 +45,7 @@
  * ------------------------------------------------------------------- 
  */
 
+
 html {
 	font-size: 10px;
 }
@@ -1134,6 +1135,10 @@ a.menu-toggle {
 	.main-navigation li.current > a:after {
 		display: none;
 	}
+}
+
+#LoginSignupform {
+    display:none;
 }
 
 /**
