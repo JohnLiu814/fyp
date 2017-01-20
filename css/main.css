@@ -918,7 +918,7 @@ a.menu-toggle {
     vertical-align:top;
 }
 
-.dropdown-content{
+.style="display:none"pdown-content{
     position:absolute;
     width:370px;
     right:0px;
@@ -1137,9 +1137,6 @@ a.menu-toggle {
 	}
 }
 
-#LoginSignupform {
-    display:none;
-}
 
 /**
  * make sure the menu is visible on larger screens
@@ -1150,6 +1147,18 @@ a.menu-toggle {
 	#main-nav-wrap ul.main-navigation {
 		display: block !important;
 	}
+}
+
+/*
+    user section
+*/
+
+#user {
+	background: #EAEAED;
+	padding-top: 12rem;
+	padding-bottom: 9.6rem;
+    margin-top: 6.6rem;
+	max-width: 1280px;
 }
 
 
@@ -1168,7 +1177,7 @@ a.menu-toggle {
 	width: 100%;
 	height: 100%;
 	min-height: 720px;
-	display: table;
+	display: ;
 	position: relative;
 }
 .shadow-overlay {
@@ -2381,5 +2390,7 @@ footer ul li {
 	background: #ff7b29;
 	color: #FFFFFF;
 }
+
+
 
 /*# sourceMappingURL=main.css.map */

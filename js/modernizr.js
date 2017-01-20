@@ -5,29 +5,28 @@ window.Modernizr=function(a,b,c){function u(a){j.cssText=a}function v(a,b){retur
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-/*
+
 function myFunction() {
     //document.getElementById("firebaseui-auth-container").style.display = 'block';
-    document.getElementById("LoginSignupform").style.display='block';
+    document.getElementById("LoginSignupform").style.display="block";
+   
 }
 
 
+
+/*
+$(document).ready(function () {
+   
+
+    $(':not("#LoginSignupform")').click(function () {
+            $('#LoginSignupform').hide()
+        });
+    
+
+});
 */
-
-
-
-
-
-$('html').click(function() {
-   $('#LoginSignupform').hide(); 
+$(document).click(function (event) {
+    if (!$(event.target).closest(".highlight with-sep").length) {
+        $('#LoginSignupform').hide()
+    }
 });
-
-$('.highlight with-sep').click(function(event){
-     event.stopPropagation();
-});
-
-$('#dropbox').click(function(event){
-	window.alert("hi");
-     $('#LoginSignupform').toggle();
-});
-
