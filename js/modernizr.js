@@ -6,11 +6,11 @@ window.Modernizr=function(a,b,c){function u(a){j.cssText=a}function v(a,b){retur
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 
-function myFunction() {
+/*function myFunction() {
     //document.getElementById("firebaseui-auth-container").style.display = 'block';
     document.getElementById("LoginSignupform").style.display="block";
-   
-}
+   window.alert("fk");
+}*/
 
 
 
@@ -25,8 +25,32 @@ $(document).ready(function () {
 
 });
 */
-$(document).click(function (event) {
-    if (!$(event.target).closest(".highlight with-sep").length) {
-        $('#LoginSignupform').hide()
-    }
+
+  $("#dropbox").click(function(){
+  	 //$("#LoginSignupform").css("display", "block");
+  	$("#LoginSignupform").removeClass("disable");
+  	$("#LoginSignupform").addClass("active");
+  	window.alert("pop up");
 });
+
+$('div:not(#LoginSignupform)').click(function(){
+  	 $("#LoginSignupform").removeClass("active");
+  	$("#LoginSignupform").addClass("disable");
+});
+$(document).click(function (event) {
+  /*  if (!$(event.target).closest(".highlight with-sep").length) {
+        $('#LoginSignupform').hide();
+
+    }
+     $("#dropbox").click(function(){
+  	 $("#LoginSignupform").css("display", "block");
+  	window.alert("pop up");
+});
+
+    $(":not('#dropdownform')").click(function(){
+  	 $("#LoginSignupform").css("display","none");
+  	//window.alert("close");
+});*/
+
+});
+
