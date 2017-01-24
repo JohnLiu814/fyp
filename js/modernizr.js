@@ -30,7 +30,7 @@ $(document).ready(function () {
   	 //$("#LoginSignupform").css("display", "block");
   	$("#LoginSignupform").removeClass("disable");
   	$("#LoginSignupform").addClass("active");
-  	window.alert("pop up");
+  	
 });
 
 $('div:not(#LoginSignupform)').click(function(){
