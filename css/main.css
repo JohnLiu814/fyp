@@ -1168,23 +1168,39 @@ a.menu-toggle {
  *
  * ------------------------------------------------------------------- 
  */
-/*input[type="file"] {
-    display: none;
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
-.custom-file-upload {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-}*/
 
-#fileButton{
-	  /* border: 1px solid #f2f2f2;
-	  -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-*/
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
 }
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+.inputfile + label * {
+	pointer-events: none;
+}
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+
 .active{
 	display:block;
 }
@@ -1229,8 +1245,32 @@ a.menu-toggle {
 
 }
 .col-twelve{
-	padding-top: 300px;
+	padding-top: 430px;
 }
+
+#realintro{
+	padding-bottom: 500px;
+	background: #14181E url(../images/intro-bg.jpg) no-repeat center
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
 .intro-content h1 {
 	color: #FFFFFF;
 	font-family: "merriweather-bold", serif;
