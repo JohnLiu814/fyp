@@ -149,13 +149,20 @@
    			<div class="col-twelve">
 
 	   			<h1>User Page</h1>
+	   			<h2>Here you can upload your 3D model</h2>
 	   			<div id="file" class="fileUpload btn btn-primary">
-					<progress value="0" max="100" id="uploader">0%</progress>
-						<input type="file" name="file" id="fileButton" class="inputfile" data-multiple-caption="{count} files selected"multiple />
-						<label for="fileButton"><strong>Choose a file</strong></label>
-
+					
 						
-					<!--<input type="file" value="upload" id="fileButton" />-->
+					<form enctype="multipart/form-data" action="upload_file.php" method="post">
+						Enter the model name <br>
+						<input type="text" name="modelname" ><br>
+						Browse for File to Upload: <br>
+						<input name="file_array[]" type="file" id="file"   size="80" multiple> <br>
+
+						<input type="submit" id="u_button" value="Upload the File">
+						<input type="hidden"  name="userID" id="hiddenUserId">
+					</form>
+
 				</div>
 
 	
