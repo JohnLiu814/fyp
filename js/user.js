@@ -4,10 +4,14 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is signed in.
     document.getElementById("intro").style.display= 'block';
     document.getElementsByClassName("realintro")[0].style.display="none";
+    document.getElementById("process").style.display= 'block';
+    document.getElementsByClassName("realprocess")[0].style.display="none";
   } else {
     // No user is signed in.
      document.getElementById("intro").style.display= 'none';
   	 document.getElementsByClassName("realintro")[0].style.display="block";
+  	 document.getElementById("process").style.display='none';
+  	 document.getElementsByClassName("realprocess")[0].style.display="block";
   }
 });
 
@@ -61,7 +65,6 @@ var fileButton = document.getElementById('fileButton');
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     document.getElementById("hiddenUserId").value=user.uid;
-    windows.alert("user.uid");
   }
 });
 

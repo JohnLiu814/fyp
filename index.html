@@ -29,6 +29,16 @@
 
 
 <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+<script src="js/three.js"></script> 
+<script src="js/TrackballControls.js"></script> 
+<script src="js/Detector.js"></script> 
+<script src="js/stats.js"></script> 
+<script src="http://threejs.org/build/three.min.js"></script> 
+<script src="http://threejs.org/examples/js/loaders/MTLLoader.js"></script> 
+<script src="http://threejs.org/examples/js/loaders/OBJLoader.js"></script> 
+<script src="http://threejs.org/examples/js/loaders/DDSLoader.js"></script> 
+<script src="http://threejs.org/examples/js/Detector.js"></script> 
+<script src="http://threejs.org/examples/js/libs/stats.min.js"></script> 
 <script>
   // Initialize Firebase
   var config = {
@@ -98,13 +108,26 @@
 					<li><a class="smoothscroll"  href="#faq" title="">FAQ</a></li>					
 					
 					<li class="highlight with-sep" id="dropdownform"><a href="#"  id="dropbox" > Login/SignUp</a>
-						<div class="container disable" id="LoginSignupform"   >
+						<!--<div class="container disable" id="LoginSignupform"   >
 							<input id="txtEmail" type="email" placeholder="Email">
 							<input id="txtPassword" type="password" placeholder="Password">
 							<button id ="btnLogin" class="btn btn-action">Log in </button>
 							<button id ="btnSignUp" class="btn btn-secondary">Sign Up</button>
 							<button id ="btnLogout" class="btn btn-action hide">Log out</button>
-						</div>
+						</div>-->
+						<form method="post" action="reglogin.php">
+						
+							
+							<input type="text" placeholder="Username" name="username">
+							<input type="text" placeholder="Password" name="password">
+							
+							<input type="submit" name="loginbtn" value="Login">
+							<input type="submit" name="logoutbtn" value="Logout">
+							<input type="submit" name="regbtn" value="Register">
+							<input type="hidden" id="checkbutton" name="checkbutton">
+
+						
+						</form>
 					</li>	
 
 
@@ -149,14 +172,14 @@
    			<div class="col-twelve">
 
 	   			<h1>User Page</h1>
-	   			<h2>Here you can upload your 3D model</h2>
+	   			<h2 style="color:#ffffff">Here you can upload your 3D model, follow the steps below: </h2>
 	   			<div id="file" class="fileUpload btn btn-primary">
 					
 						
 					<form enctype="multipart/form-data" action="upload_file.php" method="post">
-						Enter the model name <br>
-						<input type="text" name="modelname" ><br>
-						Browse for File to Upload: <br>
+						<h2 style="color:#ffffff"> 1) Enter the model name :</h2><br>
+						<input type="text" name="modelname" style="display: inline" ><br>
+						<h2 style="color:#ffffff"> 2) Browse for File to Upload : </h2> 
 						<input name="file_array[]" type="file" id="file"   size="80" multiple> <br>
 
 						<input type="submit" id="u_button" value="Upload the File">
@@ -169,7 +192,7 @@
 
 	   			
 
-	   			<a class="button stroke smoothscroll" href="#process" title="">Learn More</a>
+	   			<a class="button stroke smoothscroll" href="#process" title="">Check out your 3D models!</a>
 
 	   		</div>  
    			
@@ -182,6 +205,174 @@
       	
 
    </section> <!-- /intro -->
+
+   <!-- model page ==============================-->
+   <!-- Process Section
+   ================================================== -->
+   <section id="process" style="display:none">  
+
+   	<div class="row section-intro">
+   		<div class=" with-bottom-line">
+
+   			<h1>Model Page</h5>
+   			<h2>You can view your 3D models in this page.</h1>		
+
+   	</div> <!-- /process-content --> 
+
+   	<div class="image-part"></div>  
+   			
+   			<div id="square">
+   			
+  
+   				
+   				
+   			<style>
+#fakebody {
+	color: #000;
+	font-family: Monospace;
+	font-size: 13px;
+	text-align: center;
+	font-weight: bold;
+	background-color: #fff;
+	margin: 0px;
+	overflow: hidden;
+}
+#info {
+	color: #000;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	padding: 5px;
+}
+a {
+	color: red;
+}
+
+</style>
+
+<script src="js/TrackballControls.js"></script> 
+<script src="js/Detector.js"></script> 
+<script src="js/stats.js"></script> 
+<script src="http://threejs.org/build/three.min.js"></script> 
+<div id="fakebody"  >
+<div id="container" style="width:600px height:600px">
+<canvas id="canvas" style="width:600px height:600px"  ></canvas>
+</div>
+<script src="js/three.js"></script> 
+<script src="http://threejs.org/examples/js/loaders/MTLLoader.js"></script> 
+<script src="http://threejs.org/examples/js/loaders/OBJLoader.js"></script> 
+<script src="http://threejs.org/examples/js/loaders/DDSLoader.js"></script> 
+<script src="http://threejs.org/examples/js/Detector.js"></script> 
+<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+
+
+   			
+   			<script>
+   			
+		/*if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+			var container, stats;
+			var camera, controls, scene, renderer;
+			var cross;
+			init();
+			animate();
+				
+			function init() {
+				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000 );
+		 var canvas = document.getElementById('canvas');
+				
+				
+
+				camera.position.z = 500;
+				controls = new THREE.TrackballControls( camera );
+				controls.rotateSpeed = 10.0;
+				controls.zoomSpeed = 1.2;
+				controls.panSpeed = 0.8;
+				controls.noZoom = false;
+				controls.noPan = false;
+				controls.staticMoving = true;
+				controls.dynamicDampingFactor = 0.3;
+				controls.keys = [ 65, 83, 68 ];
+				controls.addEventListener( 'change', render );
+				// world
+				scene = new THREE.Scene();
+				scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
+
+				var onProgress = function ( xhr ) {
+					if ( xhr.lengthComputable ) {
+						var percentComplete = xhr.loaded / xhr.total * 100;
+						console.log( Math.round(percentComplete, 2) + '% downloaded' );
+					}
+				};
+
+				var onError = function ( xhr ) { };
+
+				THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
+
+				var mtlLoader = new THREE.MTLLoader();				mtlLoader.load( "tile_0_0_0_tex.mtl", function( materials ) {
+
+					materials.preload();
+
+					var objLoader = new THREE.OBJLoader();
+					objLoader.setMaterials( materials );
+					objLoader.load( "tile_0_0_0_tex.obj", function ( object ) {
+
+						scene.add( object );
+
+
+					}, onProgress, onError );
+
+				});
+
+				// lights
+				light = new THREE.DirectionalLight( 0xffffff );
+				light.position.set( 1, 1, 1 );
+				scene.add( light );
+				light = new THREE.DirectionalLight( 0x002288 );
+				light.position.set( -1, -1, -1 );
+				scene.add( light );
+				light = new THREE.AmbientLight( 0x222222 );
+				scene.add( light );
+
+				// renderer
+				renderer = new THREE.WebGLRenderer( { canvas : canvas } );
+				//me add ;D
+				/*renderer.setViewport(0, 0, canvas.clientWidth, canvas.clientHeight);
+
+				renderer.setClearColor( scene.fog.color );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				container = document.getElementById( 'container' );
+				renderer.setSize($(container).width(),$(container).height());
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				
+				//container.appendChild( renderer.domElement );
+				stats = new Stats();
+				window.addEventListener( 'resize', onWindowResize, false );
+				render();
+			}
+
+			function onWindowResize() {
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				controls.handleResize();
+				render();
+			}
+			function animate() {
+				requestAnimationFrame( animate );
+				controls.update();
+			}
+			function render() {
+				renderer.render( scene, camera );
+				stats.update();
+			}*/
+
+		</script>
+		
+   				</div>
+   			</div>	
+
+   </section> <!-- /process-->    
+   <!-- end of model page ======================== -->
 
 
   <!-- real intro ============================== -->
@@ -212,7 +403,7 @@
 
    <!-- Process Section
    ================================================== -->
-   <section id="process">  
+   <section id="process" class="realprocess">  
 
    	<div class="row section-intro">
    		<div class=" with-bottom-line">

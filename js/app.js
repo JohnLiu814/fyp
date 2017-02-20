@@ -53,5 +53,6 @@
 		}
 	});
 
+	//add value for button in loginreg form
 
 }());

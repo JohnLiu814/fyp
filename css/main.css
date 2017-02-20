@@ -1246,6 +1246,20 @@ a.menu-toggle {
 }
 .col-twelve{
 	padding-top: 430px;
+	color:#ffffff;
+}
+
+h2.col-twelve{
+	color:#ffffff;
+}
+
+#square{
+	
+	border:10px solid black;
+	padding:125px;
+	margin:25px;
+	height:750px;
+	width:600px;
 }
 
 #realintro{
