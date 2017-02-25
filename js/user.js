@@ -8,9 +8,9 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementsByClassName("realprocess")[0].style.display="none";
   } else {
     // No user is signed in.
-     document.getElementById("intro").style.display= 'none';
+     //document.getElementById("intro").style.display= 'none';
   	 document.getElementsByClassName("realintro")[0].style.display="block";
-  	 document.getElementById("process").style.display='none';
+  	// document.getElementById("process").style.display='none';
   	 document.getElementsByClassName("realprocess")[0].style.display="block";
   }
 });
@@ -67,4 +67,6 @@ firebase.auth().onAuthStateChanged((user) => {
     document.getElementById("hiddenUserId").value=user.uid;
   }
 });
+
+
 

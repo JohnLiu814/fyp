@@ -1,6 +1,6 @@
-﻿<?php
+<?php
 	session_start();
-	echo $_SESSION['ussername'];
+	
 ?>
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
@@ -101,6 +101,8 @@
 
    		<div class="logo">
 	         <a href="index.html">Viewer</a>
+	         <?php echo $_SESSION['username'];
+	         echo "in index"; ?>
 	      </div>
 
 	   	<nav id="main-nav-wrap">
@@ -122,12 +124,8 @@
 						<form method="post" action="reglogin.php" class="disable" id="LoginSignupform">
 						
 							
-							<input type="text" placeholder="Username" name="username">
-							<input type="text" placeholder="Password" name="password">
 							
-							<input type="submit" name="loginbtn" value="Login">
 							<input type="submit" name="logoutbtn" value="Logout">
-							<input type="submit" name="regbtn" value="Register">
 							<input type="hidden" id="checkbutton" name="checkbutton">
 
 						
@@ -146,27 +144,14 @@
    	
        
 
-   </header> <!-- /header -->
+   </header>
+   
 
-	<!-- user section
-	<section id="pricing" style="display:">
-	<div id="file">
-		<progress value="0" max="100" id="uploader">0%</progress>
-		<input type="file" value="upload" id="fileButton" />
-	</div>
+ 
 
-	<div id-"display">
-	</div>
-
-	</section>
-
-	==================================== -->
-
-
-
-	<!-- intro section
+  <!-- intro section
    ================================================== -->
-   <section id="intro" style="display:none">
+   <section id="intro" style="display: block">
 
    	<div class="shadow-overlay"></div>
 
@@ -211,9 +196,12 @@
    </section> <!-- /intro -->
 
    <!-- model page ==============================-->
-   <!-- Process Section
+
+  
+
+<!-- Process Section
    ================================================== -->
-   <section id="process" style="display:none">  
+   <section id="process">  
 
    	<div class="row section-intro">
    		<div class=" with-bottom-line">
@@ -377,95 +365,6 @@ a {
 
    </section> <!-- /process-->    
    <!-- end of model page ======================== -->
-
-
-  <!-- real intro ============================== -->
-   
-   	<section id="intro" class="realintro" >
-
-   		<div class="shadow-overlay"></div>
-
-   		<div class="intro-content">
-   			<div class="row">
-
-   				<div class="col-twelve">
-
-	
-
-	   				<h5>Hello welcome to viewer.</h5>
-	   				<h1>Our 3D model viewer are different from the others .</h1>
-
-	   				<a class="button stroke smoothscroll" href="#process" title="">Learn More</a>
-
-	   			</div>  
-   			
-   			</div>   		 		
-   		</div> 
-   		</section>
-   	
-  <!-- ====================================  -->
-
-   <!-- Process Section
-   ================================================== -->
-   <section id="process" class="realprocess">  
-
-   	<div class="row section-intro">
-   		<div class=" with-bottom-line">
-
-   			<h5>Process</h5>
-   			<h1>How it works?</h1>
-
-   			<p class="lead">Just few simple steps to get start with our viewer.</p>
-
-   		</div>   		
-   	</div>
-
-   	<div class="row process-content">
-
-   		<div class="left-side">
-
-   			<div class="item" data-item="1">
-
-   				<h5>Sign Up</h5>
-
-   				<p>If you do not have a account, you will have to sign up first. On the top right hand corner of the web page, there is a sign up button for you . </p>
-   					
-   			</div>
-
-   			<div class="item" data-item="2">
-
-	   			<h5>Upload</h5>
-
-	   			<p>Once you logged in, you can now upload any 3D model to our database as you want. There is a upload button on top of the navigation bar, click it and choose which file you want to upload.</p>
-   			</div>
-   				
-   		</div> <!-- /left-side -->
-   		
-   		<div class="right-side">
-   				
-   			<div class="item" data-item="3">
-
-   				<h5>Create</h5>
-
-   				<p>Lorem ipsum Cupidatat nostrud non cupidatat ut dolor id eiusmod non minim aute consectetur incididunt tempor irure aute consequat quis voluptate.</p>
-   					
-   			</div>
-
-   			<div class="item" data-item="4">
-
-   				<h5>Publish</h5>
-
-   				<p>Lorem ipsum Cupidatat nostrud non cupidatat ut dolor id eiusmod non minim aute consectetur incididunt tempor irure aute consequat quis voluptate.</p>
-   					
-   			</div>
-
-   		</div> <!-- /right-side -->  
-
-   		<div class="image-part"></div>  			
-
-   	</div> <!-- /process-content --> 
-
-   </section> <!-- /process-->    
 
 
    <!-- features Section
