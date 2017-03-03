@@ -19,7 +19,8 @@
 			}  
 			echo "<br>".$userID."<br>"; */ 
 
-
+			$sqlInputModelName = "INSERT INTO $username(modelname) VALUES('$model')";
+			mysqli_query($db, $sqlInputModelName);
 
 		//mkdir("./models/".$userID."/", 0777, true);
 		$sql = "SELECT id FROM users WHERE username = '$username'";
@@ -29,12 +30,23 @@
 		$modelref = $id . $model;
 		echo $modelref . "<br>";
 
+		$sqlgetnum = "SELECT modelnum FROM users WHERE username = '$username'";
+		$resultnum = mysqli_query($db, $sqlgetnum);
+		$modelrow = mysqli_fetch_assoc($resultnum);
+		$modelnum = $modelrow['modelnum'];
+		echo $modelnum;
+		$_SESSION['modelnum'] = $modelnum;
+
 		
 		
 		
 
 	if(isset($_FILES['file_array'])){
-		
+		$modelnum = $modelnum+1; 
+		$_SESSION['modelnum'] = $modelnum;
+		$sqlupdate = "UPDATE users SET modelnum = '$modelnum' WHERE username = '$username'";
+		mysqli_query($db, $sqlupdate);
+
 		$sql2 = "CREATE TABLE $modelref (obj VARCHAR(30), mtl VARCHAR(30), jpg VARCHAR(30), path VARCHAR(100))";
 		mysqli_query($db, $sql2);
 
@@ -76,6 +88,7 @@
 				echo "move_uploaded_file function failed for ". $name_array[$i]."<br>";
 			}
 		}
+		header("location: user.php");
 	}
 
 

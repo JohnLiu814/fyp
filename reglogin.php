@@ -21,6 +21,11 @@ if(isset($_POST['loginbtn'])){
 		$result = mysqli_query($db, $sql);
 		$row_cnt =  mysqli_num_rows($result);
 		
+		$sqlid = "SELECT id FROM users WHERE username = '$username'";
+		$result = mysqli_query($db, $sqlid);
+		$rows = mysqli_fetch_assoc($result);
+		$id = $rows['id'];
+		$_SESSION['id'] = $id;
 
 		if($row_cnt==1){
 				$_SESSION['message'] = "You are now logged in";
@@ -46,13 +51,15 @@ if(isset($_POST['loginbtn'])){
 
 	}else if(isset($_POST['regbtn'])){
 		session_start();
-		echo "reg";
 		$username = mysql_real_escape_string($_POST['username']);
 		$password = mysql_real_escape_string($_POST['password']);
 		$randomid = uniqid();
 		$password = md5($password); // hash password before storing 
 		$sql = "INSERT INTO users(username, id, modelnum, password) VALUES('$username', '$randomid', '0','$password')";
 		mysqli_query($db, $sql);
+		$sql2 = "CREATE TABLE $username (modelname VARCHAR(100))";
+		mysqli_query($db, $sql2);
+		header("location: index.php");
 
 	}
 

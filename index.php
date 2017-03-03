@@ -100,7 +100,7 @@
    	<p class="row">
 
    		<div class="logo">
-	         <a href="index.html">Viewer</a>
+	         <a href="index.php">Viewer</a>
 	         <?php echo $_SESSION['username'];
 	         echo "in index"; ?>
 	      </div>
@@ -183,7 +183,7 @@
 	
 
 	   				<h5>Hello welcome to viewer.</h5>
-	   				<h1>Our 3D model viewer are different from the others .</h1>
+	   				<h1>Our 3D model viewer is different from the others .</h1>
 
 	   				<a class="button stroke smoothscroll" href="#process" title="">Learn More</a>
 

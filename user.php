@@ -100,7 +100,7 @@
    	<p class="row">
 
    		<div class="logo">
-	         <a href="index.html">Viewer</a>
+	         <a href="user.php">Viewer</a>
 	         <?php echo $_SESSION['username'];
 	         echo "in index"; ?>
 	      </div>
@@ -206,8 +206,40 @@
    	<div class="row section-intro">
    		<div class=" with-bottom-line">
 
-   			<h1>Model Page</h5>
-   			<h2>You can view your 3D models in this page.</h1>		
+   			<h1>Model Page</h1>
+   			<h2>You can view your 3D models in this page.</h2>
+   			<?php 
+   				$db = mysqli_connect("localhost","root","","fyp");
+   				$username = $_SESSION['username'];
+   				$sqlgetnum = "SELECT modelnum FROM users WHERE username = '$username'";
+				$resultnum = mysqli_query($db, $sqlgetnum);
+				$modelrow = mysqli_fetch_assoc($resultnum);
+				$modelnum = $modelrow['modelnum'];
+				$_SESSION['modelnum'] = $modelnum;
+				$modelnum = $_SESSION['modelnum'];
+
+				$sqlgetname = "SELECT modelname FROM $username";
+				$resultname = mysqli_query($db, $sqlgetname);
+				
+
+   				echo  "<h2> The number of 3D model you own is:  $modelnum  </h2>";
+   				echo "<h2>";
+   				echo '<form method="post" action="deletefile.php" id="loaddelform">';
+   				echo "Choose your model here:  ";
+   				
+   				echo '<select name="modeldropdown" id="modeldropdown">';
+   				echo "<option value='Select a model'>" . "Select a model".       "</option>";
+   				while($namefetch = mysqli_fetch_array($resultname)){
+   					echo "<option value='" . $namefetch['modelname'] ."'>" . $namefetch['modelname'] ."</option>";
+   				}
+   				echo '</select>';
+   			
+   				echo '<input type="submit" name="loadbtn" value="Load">';
+				echo '<input type="submit" name="delbtn" value="Delete">';
+   				echo '</form>';
+   				echo "</h2>";
+   			 ?>
+   			
 
    	</div> <!-- /process-content --> 
 
