@@ -1,5 +1,5 @@
 
-firebase.auth().onAuthStateChanged(function(user) {
+/*firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
     document.getElementById("intro").style.display= 'block';
@@ -13,7 +13,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   	// document.getElementById("process").style.display='none';
   	 document.getElementsByClassName("realprocess")[0].style.display="block";
   }
-});
+});*/
 
 
 //Get elements

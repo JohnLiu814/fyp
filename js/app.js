@@ -43,7 +43,7 @@
 	}
 	
 	// Add a realtime listener
-	firebase.auth().onAuthStateChanged(firebaseUser => {
+	/*firebase.auth().onAuthStateChanged(firebaseUser => {
 		if(firebaseUser){
 			console.log(firebaseUser);
 			btnLogout.classList.remove('hide');
@@ -51,8 +51,17 @@
 			console.log('not logged in');
 			btnLogout.classList.add('hide');
 		}
-	});
+	});*/
 
+	/*function displaySquare(){
+		  var display = "<?php echo $_SESSION['display']?>";
+		  document.write(display);
+		  if(display == 1){
+		  	document.getElementById("square").style.display="block";
+		  }
+		  else
+		  	document.getElementById("square").style.display="none";
+	}*/
 	//add value for button in loginreg form
 
 }());

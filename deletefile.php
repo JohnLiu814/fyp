@@ -3,7 +3,8 @@
 	if(isset($_POST['loadbtn'])){
 		session_start();
 		echo "load";
-		header('Location: user.php');
+		$_SESSION['display'] = 1;
+		header('Location: user.php?');
 	}else if(isset($_POST['delbtn'])){
 		session_start();
 		$db = mysqli_connect("localhost","root","","fyp");
@@ -115,6 +116,98 @@
 
 
 		header('Location: user.php');
+	}else if(isset($_POST['downbtn'])){
+		echo 'download';
+		session_start();
+		$db = mysqli_connect("localhost","root","","fyp");
+   		$username = $_SESSION['username'];
+   		$model = $_POST['modeldropdown'];
+   		echo $model;
+   		echo $_SESSION['id'];
+		$id = $_SESSION['id'];
+		$modelref = $id .$model;
+		$source = "./models"."/". $id ."/".$model;
+		
+		$zip_file = $source.'/'.$model.'.zip';
+
+		$zip = new ZipArchive();
+		if($zip->open($zip_file, ZipArchive::CREATE)!== TRUE){
+			exit("message");
+		}
+		
+
+		$sqlgetobj = "SELECT obj FROM $modelref";
+		$result = mysqli_query($db, $sqlgetobj);
+		$row = mysqli_fetch_row($result);
+		$row_cnt =  mysqli_num_rows($result);
+		echo "<br>".$row_cnt;
+
+		while($row=mysqli_fetch_assoc($result)){
+			if(($row['obj'])){
+				echo $row['obj'];
+				$objsource = $source . $row['obj'];
+				echo $objsource;
+				$zip->addFile($source.'/'.$row['obj']);
+		
+			
+			}
+		}
+		
+		$sqlgetmtl = "SELECT mtl FROM $modelref";
+		$result = mysqli_query($db, $sqlgetmtl);
+		$row = mysqli_fetch_row($result);
+		$row_cnt = mysqli_num_rows($result);
+		echo "<br>".$row_cnt;
+		
+		while($row=mysqli_fetch_assoc($result)){
+			if(($row['mtl'])){
+				echo $row['mtl'];
+				$objsource = $source . $row['mtl'];
+				echo $objsource;
+				$zip->addFile($source.'/'.$row['mtl']);
+		
+			
+			}
+		}
+
+		
+
+		$sqlgetjpg = "SELECT jpg FROM $modelref";
+		$result = mysqli_query($db, $sqlgetjpg);
+		$row = mysqli_fetch_row($result);
+		$row_cnt = mysqli_num_rows($result);
+		echo "<br>".$row_cnt;
+		
+		while($row=mysqli_fetch_assoc($result)){
+			if(($row['jpg'])){
+				echo $row['jpg'];
+				$objsource = $source . $row['jpg'];
+				echo $objsource;
+				$zip->addFile($source.'/'.$row['jpg']);
+		
+			
+			}
+		}
+
+
+
+
+
+		$download_file = file_get_contents($source);
+		$zip->close();
+
+
+		header('Content-type: application/zip');
+		header('Content-Disposition: attachment; filename="'.basename($zip_file).'"');
+		header("Content-length: " . filesize($zip_file));
+		header("Pragma: no-cache");
+		header("Expires: 0");
+
+		ob_clean();
+		flush();
+		readfile($zip_file);
+		unlink($zip_file);
+		exit;
 	}
 
 

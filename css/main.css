@@ -719,16 +719,17 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  */
 
 .section-intro {
-	max-width: 700px;
+	max-width: 900px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 5.2rem;
 	position: relative;
+	padding-top:100px;
 }
 .section-intro h1 {
 	font-family: "merriweather-bold", serif;
-	font-size: 4.8rem;
+	font-size: 5.7rem;
 	color: #252525;
 	line-height: 1.25;
 	margin-bottom: 1.2rem;
@@ -1245,8 +1246,11 @@ a.menu-toggle {
 
 }
 .col-twelve{
-	padding-top: 300px;
+	padding-top: 100px;
 	color:#ffffff;
+}
+.introdiv{
+	padding-top : 200px;
 }
 
 h2.col-twelve{
@@ -1258,12 +1262,12 @@ h2.col-twelve{
 }
 
 #square{
-	
+	display:none;
 	border:10px solid black;
 	padding:125px;
 	margin:25px;
 	height:750px;
-	width:600px;
+	
 }
 
 #realintro{
@@ -1522,9 +1526,10 @@ h2.col-twelve{
 
 #process {
 	background: #FFFFFF;
-	padding-top: 12rem;
+	padding-top: 0 rem;
 	padding-bottom: 15rem;
 	overflow: hidden;
+	min-height: 1000px;
 }
 .process-content {
 	position: relative;
@@ -1551,7 +1556,7 @@ h2.col-twelve{
 .process-content .image-part {
 	margin: 0 auto;
 	height: 660px;
-	background-image: url("../images/appdesign.jpg");
+	background-image: url("../images/appdesign.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	-webkit-background-size: contain;
@@ -1643,7 +1648,7 @@ h2.col-twelve{
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
-	padding-top: 12rem;
+	padding-top: 0 rem;
 	padding-bottom: 12rem;
 	color: white;
 }
@@ -2366,7 +2371,8 @@ footer ul li {
 	color: #545454 !important;
 }
 .footer-bottom {
-	margin-top: 3rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 	text-align: center;
 }
 .footer-bottom .copyright span {

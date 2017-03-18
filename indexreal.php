@@ -101,7 +101,8 @@
 
    		<div class="logo">
 	         <a href="index.php">Viewer</a>
-	         
+	         <?php echo $_SESSION['username'];
+	         echo "in index"; ?>
 	      </div>
 
 	   	<nav id="main-nav-wrap">
@@ -109,7 +110,8 @@
 					<li class="current"><a class="smoothscroll"  href="#intro" title="">Home</a></li>
 					<li><a class="smoothscroll"  href="#process" title="">Process</a></li>
 					<li><a class="smoothscroll"  href="#features" title="">Features</a></li>
-					<li><a class="smoothscroll"  href="#testimonials" title="">FAQ</a></li>					
+					<li><a class="smoothscroll"  href="#pricing" title="">Pricing</a></li>
+					<li><a class="smoothscroll"  href="#faq" title="">FAQ</a></li>					
 					
 					<li class="highlight with-sep" id="dropdownform"><a href="#"  id="dropbox" > Login/SignUp</a>
 						<!--<div class="container disable" id="LoginSignupform"   >
@@ -176,18 +178,17 @@
    		<div class="intro-content">
    			<div class="row">
 
-   				<div class = 'introdiv'>
-   					<div class="col-twelve">
+   				<div class="col-twelve">
 
 	
 
-	   					<h5>Hello welcome to 3D model viewer.</h5>
-	   					<h1>A unique, enhanced 3D model viewer.</h1>
+	   				<h5>Hello welcome to viewer.</h5>
+	   				<h1>Our 3D model viewer is different from the others .</h1>
 
-	   					<a class="button stroke smoothscroll" href="#process" title="">Learn More</a>
+	   				<a class="button stroke smoothscroll" href="#process" title="">Learn More</a>
 
-	   				</div>  
-   				</div>
+	   			</div>  
+   			
    			</div>   		 		
    		</div> 
    		</section>
@@ -265,15 +266,15 @@
 
    				<h5>Sign Up</h5>
 
-   				<p>If you do not have an account, sign up at the top right corner of the web page.  </p>
+   				<p>If you do not have a account, you will have to sign up first. On the top right hand corner of the web page, there is a sign up button for you . </p>
    					
    			</div>
 
    			<div class="item" data-item="2">
 
-	   			<h5>Log in</h5>
+	   			<h5>Upload</h5>
 
-	   			<p>After you have an account, you can now log in at the same place you sign up (top right corner of the webpage).</p>
+	   			<p>Once you logged in, you can now upload any 3D model to our database as you want. There is a upload button on top of the navigation bar, click it and choose which file you want to upload.</p>
    			</div>
    				
    		</div> <!-- /left-side -->
@@ -282,17 +283,17 @@
    				
    			<div class="item" data-item="3">
 
-   				<h5>Upload</h5>
+   				<h5>Create</h5>
 
-   				<p>After you logged in, you will be directed to a different page. There, you can start using our 3D model viewer by uploading your own 3D. </p>
+   				<p>Lorem ipsum Cupidatat nostrud non cupidatat ut dolor id eiusmod non minim aute consectetur incididunt tempor irure aute consequat quis voluptate.</p>
    					
    			</div>
 
    			<div class="item" data-item="4">
 
-   				<h5>View</h5>
+   				<h5>Publish</h5>
 
-   				<p>You can also view your 3D model you have uploaded before.</p>
+   				<p>Lorem ipsum Cupidatat nostrud non cupidatat ut dolor id eiusmod non minim aute consectetur incididunt tempor irure aute consequat quis voluptate.</p>
    					
    			</div>
 
@@ -483,7 +484,7 @@ a {
    			<h5>Features</h5>
    			<h1>Great features you'll love.</h1>
 
-
+   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
 
    		</div>   		
    	</div>
@@ -498,9 +499,9 @@ a {
 
 	            <div class="service-content">	
 
-	            	 <h3 class="h05">LOD (Level of detail)</h3>
+	            	 <h3 class="h05">Fully Resposive</h3>
 
-		            <p>Our 3D model are displayed using LOD which hides the unnecessary details of the 3D model, resulting in faster loading time and low consumption of your computer resources. 
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
 	         		</p>
 	         		
 	         	</div> 	         	 
@@ -512,9 +513,9 @@ a {
 					<span class="icon"><i class="icon-eye"></i></span>                          
 
 	            <div class="service-content">	
-	            	<h3 class="h05">Easy-to-use</h3>  
+	            	<h3 class="h05">Retina Ready</h3>  
 
-		            <p>You can start using our 3D model viewer in just a few step. Each step requires only one or two button to click.
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
 	         		</p>
 
 	         		
@@ -527,9 +528,9 @@ a {
 			   	<span class="icon"><i class="icon-paint-brush"></i></span>		            
 
 	            <div class="service-content">
-	            	<h3 class="h05">Free-of-charge</h3>
+	            	<h3 class="h05">Stylish Design</h3>
 
-		            <p>Our 3D model viewer is free-of-charge as we rely on web advertisement to gain income to maintain our website.
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
 	        			</p> 
 
 	        			
@@ -542,9 +543,9 @@ a {
 					<span class="icon"><i class="icon-file"></i></span>	              
 
 	            <div class="service-content">
-	            	<h3 class="h05">Unlimited uploads</h3>
+	            	<h3 class="h05">Clean Code</h3>
 
-		            <p>We have a large database that allows you upload 3D models as much as you want.
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
 	         		</p> 
 
 	         		
@@ -552,6 +553,34 @@ a {
 
 				</div> <!-- /bgrid -->
 
+			   <div class="bgrid feature">
+
+			   	<span class="icon"><i class="icon-layers"></i></span>	            
+
+	            <div class="service-content">	
+	            	<h3 class="h05">Easy To Customize</h3>
+
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	        			</p> 
+
+	        			
+	            </div>	               
+
+			   </div> <!-- /bgrid -->
+
+			   <div class="bgrid feature">
+
+			   	<span class="icon"><i class="icon-gift"></i></span>	   	           
+
+	            <div class="service-content">
+	            	 <h3 class="h05">Free of Charge</h3>
+
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	        			</p> 
+	        			
+	            </div>	               
+
+			   </div> <!-- /bgrid -->
 
 	      </div> <!-- features-list -->
    		
@@ -568,7 +597,149 @@ a {
 	<!-- pricing
    ================================================== -->
 
-   
+   <section id="pricing">
+
+   	<div class="row section-intro">
+   		<div class="col-twelve with-bottom-line">
+
+   			<h5>Our Pricing</h5>
+   			<h1>Pick the best plan for you.</h1>
+
+   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+
+   		</div>   		
+   	</div>
+
+   	<div class="row pricing-content">
+
+         <div class="pricing-tables block-1-4 group">
+
+            <div class="bgrid"> 
+
+            	<div class="price-block">
+
+            		<div class="top-part">
+
+	            		<h3 class="plan-title">Starter</h3>
+		               <p class="plan-price"><sup>$</sup>4.99</p>
+		               <p class="price-month">Per month</p>
+		               <p class="price-meta">Billed Annually.</p>
+
+	            	</div>                
+
+	               <div class="bottom-part">
+
+	            		<ul class="features">
+		                  <li><strong>3GB</strong> Storage</li>
+		                  <li><strong>10GB</strong> Bandwidth</li>		                  
+		                  <li><strong>5</strong> Databases</li>		                  
+		                  <li><strong>30</strong> Email Accounts</li>
+		               </ul>
+
+		               <a class="button large" href="">Get Started</a>
+
+	            	</div>
+
+            	</div>           	
+                        
+			   </div> <!-- /price-block -->
+
+            <div class="bgrid">
+
+            	<div class="price-block primary">
+
+            		<div class="top-part" data-info="recommended">
+
+	            		<h3 class="plan-title">Standard</h3>
+		               <p class="plan-price"><sup>$</sup>9.99</p>
+		               <p class="price-month">Per month</p>
+							<p class="price-meta">Billed Annually.</p>
+
+	            	</div>               
+
+	               <div class="bottom-part">
+
+	            		<ul class="features">
+		                  <li><strong>5GB</strong> Storage</li>
+		                  <li><strong>15GB</strong> Bandwidth</li>		                  
+		                  <li><strong>7</strong> Databases</li>		                  
+		                  <li><strong>40</strong> Email Accounts</li>
+		               </ul>
+
+		               <a class="button large" href="">Get Started</a>
+
+	            	</div>
+            		
+            	</div>            	                 
+
+			  </div> <!-- /price-block -->
+
+           <div class="bgrid">               
+
+               <div class="price-block">
+
+            		<div class="top-part">
+
+	            		<h3 class="plan-title">Premium</h3>
+		               <p class="plan-price"><sup>$</sup>19.99</p>
+		               <p class="price-month">Per month</p>
+		                <p class="price-meta">Billed Annually.</p>		               
+
+	            	</div> 
+	            	
+						<div class="bottom-part">
+
+	            		<ul class="features">
+		                  <li><strong>10GB</strong> Storage</li>
+		                  <li><strong>30GB</strong> Bandwidth</li>		                  
+		                  <li><strong>15</strong> Databases</li>		                  
+		                  <li><strong>60</strong> Email Accounts</li>
+		               </ul>
+
+		               <a class="button large" href="">Get Started</a>
+
+	            	</div>	            		                
+            		
+            	</div>                              
+
+			   </div> <!-- /price-block --> 
+
+			   <div class="bgrid">               
+
+               <div class="price-block">
+
+            		<div class="top-part">
+
+	            		<h3 class="plan-title">Ultimate</h3>
+		               <p class="plan-price"><sup>$</sup>29.99</p>
+		               <p class="price-month">Per month</p>
+		               <p class="price-meta">Billed Annually.</p>		               
+
+	            	</div> 
+	            	
+						<div class="bottom-part">
+
+	            		<ul class="features">
+		                  <li><strong>20GB</strong> Storage</li>
+		                  <li><strong>40GB</strong> Bandwidth</li>		                  
+		                  <li><strong>25</strong> Databases</li>		                  
+		                  <li><strong>100</strong> Email Accounts</li>
+		               </ul>
+
+		               <a class="button large" href="">Get Started</a>
+
+	            	</div>	            		                
+            		
+            	</div>                              
+
+			   </div> <!-- /price-block -->           
+
+         </div> <!-- /pricing-tables --> 
+
+      </div> <!-- /pricing-content --> 
+
+   </section> <!-- /pricing --> 
+
 
    <!-- Testimonials Section
    ================================================== -->
@@ -632,6 +803,136 @@ a {
    <!-- faq
    ================================================== -->
    <section id="faq">
+
+   	<div class="row section-intro">
+   		<div class="col-twelve with-bottom-line">
+
+   			<h5>Faq</h5>
+   			<h1>Questions and Answers.</h1>
+
+   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+
+   		</div>   		
+   	</div>
+
+   	<div class="row faq-content">
+
+   		<div class="q-and-a block-1-2 block-tab-full group">
+
+   			<div class="bgrid">
+
+   				<h3>What are the security features?</h3>
+
+   				<p>Lorem ipsum Id in magna ad culpa dolor eu aute non amet aute ea in consectetur in quis nostrud anim proident dolore in sed et mollit voluptate culpa irure consequat laborum ea sint in mollit adipisicing cupidatat.</p>
+
+   			</div>
+
+   			<div class="bgrid">
+
+   				<h3>How can I update my user profile?</h3>
+
+   				<p>Lorem ipsum Id in magna ad culpa dolor eu aute non amet aute ea in consectetur in quis nostrud anim proident dolore in sed et mollit voluptate culpa irure consequat laborum ea sint in mollit adipisicing cupidatat.</p>
+
+   			</div>
+
+   			<div class="bgrid">
+
+   				<h3>What features are not included in the free version?</h3>
+
+   				<p>Lorem ipsum Id in magna ad culpa dolor eu aute non amet aute ea in consectetur in quis nostrud anim proident dolore in sed et mollit voluptate culpa irure consequat laborum ea sint in mollit adipisicing cupidatat.</p>
+
+   			</div>
+
+   			<div class="bgrid">
+
+   				<h3>Can I upgrade my account from Starter to Premium?</h3>
+
+   				<p>Lorem ipsum Id in magna ad culpa dolor eu aute non amet aute ea in consectetur in quis nostrud anim proident dolore in sed et mollit voluptate culpa irure consequat laborum ea sint in mollit adipisicing cupidatat.</p>
+
+   			</div>
+
+   			<div class="bgrid">
+
+   				<h3>Where can I found all my uploads?</h3>
+
+   				<p>Lorem ipsum Id in magna ad culpa dolor eu aute non amet aute ea in consectetur in quis nostrud anim proident dolore in sed et mollit voluptate culpa irure consequat laborum ea sint in mollit adipisicing cupidatat.</p>
+
+   			</div>
+
+   			<div class="bgrid">
+
+   				<h3>How long can I use the free trial version?</h3>
+
+   				<p>Lorem ipsum Id in magna ad culpa dolor eu aute non amet aute ea in consectetur in quis nostrud anim proident dolore in sed et mollit voluptate culpa irure consequat laborum ea sint in mollit adipisicing cupidatat.</p>
+
+   			</div>
+
+   		</div> <!-- /q-and-a --> 
+   		
+   	</div> <!-- /faq-content --> 
+
+   	<div class="row section-ads">
+
+		   <div class="col-twelve">	
+
+		     	<div class="ad-content">
+
+		     		<h2 class="h01"><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Styleshout Recommends Dreamhost.</a></h2>
+
+			      <p class="lead">
+			      Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT"><span>DreamHost</span></a>.
+					Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>. 
+					<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->					
+					</p>
+
+					<div class="action">
+			         <a class="button large round" href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Sign Up Now</a>
+		        	</div>
+
+		     	</div>			      
+
+			</div>
+
+		</div> <!-- /section-ads --> 
+
+
+   </section> <!-- /faq --> 
+
+   <!-- cta
+   ================================================== -->
+   <section id="cta">
+
+   	<div class="row cta-content">
+
+   		<div class="col-twelve">
+
+   			<h1 class="h01">Get started now. Try Lhander free for 30 days.</h1>
+
+   			<p class="lead">Download the app now. Available on the:</p>
+
+   			<ul class="stores">
+   				<li class="app-store">
+   					<a href="#" class="button round large" title="">
+   						<i class="icon ion-social-apple"></i>App Store
+   					</a>
+   				</li>
+   				<li class="play-store">
+   					<a href="#" class="button round large" title="">
+   						<i class="icon ion-social-android"></i>Play Store</a>
+   					</li>
+   				<li class="windows-store">
+   					<a href="#" class="button round large" title="">
+   						<i class="icon ion-social-windows"></i>Win Store</a>
+   					</li>
+   			</ul>
+
+   		</div>
+
+   	</div> <!-- /cta-content -->
+
+   </section> <!-- /cta -->
+
+
    <!-- footer
    ================================================== -->
    <footer>
