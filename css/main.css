@@ -719,7 +719,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  */
 
 .section-intro {
-	max-width: 900px;
+	max-width: 1024px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -1260,13 +1260,14 @@ h2.col-twelve{
 #modeldropdown{
 	display:inline;
 }
+#t8div{
+	padding-top: 12px;
 
+}
 #square{
 	display:none;
-	border:10px solid black;
-	padding:125px;
-	margin:25px;
-	height:750px;
+	height:768px;
+	width:1024px;
 	
 }
 

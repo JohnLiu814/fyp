@@ -2,10 +2,102 @@
 	
 	if(isset($_POST['loadbtn'])){
 		session_start();
+		$db = mysqli_connect("localhost","root","","fyp");
+		$username = $_SESSION['username'];
+		$id = $_SESSION['id'];
+		$model = $_POST['modeldropdown'];
+		$modelref = $id .$model;
+		$fullPath = "/mywebsite/models/".$id."/".$model."/";
+		$_SESSION['fullPath'] = $fullPath;
+		$halfPath = "models/".$id."/".$model."/";
+		$_SESSION['halfPath'] = $halfPath;
+		$returnPathSql = "SELECT path FROM $modelref";
+		$returnPathResult = mysqli_query($db, $returnPathSql);
+		echo $fullPath;
+		echo "<br>";
+
+		while($returnPathRow = mysqli_fetch_assoc($returnPathResult)){
+			if($returnPathRow['path']){
+				$_SESSION['path'] = $returnPathRow['path'];
+			}
+		}
+
+
+		$checkArray = array();
+		$counter = 0;
+		for( $i = 0; $i<32; $i++){
+			for($j = 0; $j<32; $j++){
+				$checkWithType = "tile_5_". $i. "_".$j."_tex.obj";
+				$checkWithOutType = "tile_5_". $i. "_".$j."_tex";
+				$checkSql = "SELECT COUNT(obj) AS number FROM $modelref WHERE obj = '$checkWithType'";
+				$checkSqlResult = mysqli_query($db, $checkSql);
+				$checkSqlRow = mysqli_fetch_assoc($checkSqlResult);
+				if($checkSqlRow['number']==0){
+					$checkArray[$counter] = $checkWithOutType;
+					$counter = $counter + 1;
+					$_SESSION['checkArray'] = $checkArray;
+				}
+			}
+		}
+		
+		//print_r(array_values($checkArray));
+
+		
+		echo "<br>";
 		echo "load";
 		$_SESSION['display'] = 1;
-		header('Location: user.php?');
-	}else if(isset($_POST['delbtn'])){
+		//header('Location: t8.php');
+		header('Location:user.php');
+
+	}else if(isset($_POST['loadfull'])){
+		session_start();
+		$db = mysqli_connect("localhost","root","","fyp");
+		$username = $_SESSION['username'];
+		$id = $_SESSION['id'];
+		$model = $_POST['modeldropdown'];
+		$modelref = $id .$model;
+		$fullPath = "/mywebsite/models/".$id."/".$model."/";
+		$_SESSION['fullPath'] = $fullPath;
+		$halfPath = "models/".$id."/".$model."/";
+		$_SESSION['halfPath'] = $halfPath;
+		$returnPathSql = "SELECT path FROM $modelref";
+		$returnPathResult = mysqli_query($db, $returnPathSql);
+		echo $fullPath;
+		echo "<br>";
+
+		while($returnPathRow = mysqli_fetch_assoc($returnPathResult)){
+			if($returnPathRow['path']){
+				$_SESSION['path'] = $returnPathRow['path'];
+			}
+		}
+
+
+		$checkArray = array();
+		$counter = 0;
+		for( $i = 0; $i<32; $i++){
+			for($j = 0; $j<32; $j++){
+				$checkWithType = "tile_5_". $i. "_".$j."_tex.obj";
+				$checkWithOutType = "tile_5_". $i. "_".$j."_tex";
+				$checkSql = "SELECT COUNT(obj) AS number FROM $modelref WHERE obj = '$checkWithType'";
+				$checkSqlResult = mysqli_query($db, $checkSql);
+				$checkSqlRow = mysqli_fetch_assoc($checkSqlResult);
+				if($checkSqlRow['number']==0){
+					$checkArray[$counter] = $checkWithOutType;
+					$counter = $counter + 1;
+					$_SESSION['checkArray'] = $checkArray;
+				}
+			}
+		}
+		
+		//print_r(array_values($checkArray));
+
+		
+		echo "<br>";
+		echo "load";
+		$_SESSION['display'] = 1;
+		header('Location: t8.php');
+	}
+	else if(isset($_POST['delbtn'])){
 		session_start();
 		$db = mysqli_connect("localhost","root","","fyp");
    		$username = $_SESSION['username'];

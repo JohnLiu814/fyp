@@ -284,7 +284,7 @@
 
    				<h5>Upload</h5>
 
-   				<p>After you logged in, you will be directed to a different page. There, you can start using our 3D model viewer by uploading your own 3D. </p>
+   				<p>After you logged in, you will be directed to a different page. There, you can start using our 3D model viewer by uploading your own 3D models. </p>
    					
    			</div>
 
@@ -292,7 +292,7 @@
 
    				<h5>View</h5>
 
-   				<p>You can also view your 3D model you have uploaded before.</p>
+   				<p>You can also view your 3D models you have uploaded before.</p>
    					
    			</div>
 
