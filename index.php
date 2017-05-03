@@ -109,7 +109,7 @@
 					<li class="current"><a class="smoothscroll"  href="#intro" title="">Home</a></li>
 					<li><a class="smoothscroll"  href="#process" title="">Process</a></li>
 					<li><a class="smoothscroll"  href="#features" title="">Features</a></li>
-					<li><a class="smoothscroll"  href="#testimonials" title="">FAQ</a></li>					
+					<li><a class="smoothscroll"  href="#testimonials" title="">Feedback</a></li>					
 					
 					<li class="highlight with-sep" id="dropdownform"><a href="#"  id="dropbox" > Login/SignUp</a>
 						<!--<div class="container disable" id="LoginSignupform"   >
@@ -121,7 +121,7 @@
 						</div>-->
 						<form method="post" action="reglogin.php" class="disable" id="LoginSignupform">	
 							<input type="text" placeholder="Username" name="username">
-							<input type="text" placeholder="Password" name="password">
+							<input type="password" placeholder="Password" name="password">
 							<input type="submit" name="loginbtn" value="Login">
 							<input type="submit" name="regbtn" value="Register">
 							<input type="hidden" id="checkbutton" name="checkbutton">
@@ -576,7 +576,7 @@ a {
 
    	<div class="row">
    		<div class="col-twelve">
-   			<h2 class="h01">Hear What Are Clients Say.</h2>
+   			<h2 class="h01">Hear What Are Testers Say.</h2>
    		</div>   		
    	</div>   	
 
@@ -590,15 +590,13 @@ a {
                	<div class="testimonial-author">
                     	<img src="images/avatars/avatar-1.jpg" alt="Author image">
                     	<div class="author-info">
-                    		Steve Jobs
-                    		<span class="position">CEO, Apple.</span>
+                    		Mr Wong
+                    		<span class="position">CS, HKUST Student</span>
                     	</div>
                   </div>
 
                   <p>
-                  Your work is going to fill a large part of your life, and the only way to be truly satisfied is
-                  to do what you believe is great work. And the only way to do great work is to love what you do.
-                  If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.  						
+                  Your Viewer works perfectly for me. Especially for the nearly full screen viewing, the control is very smooth.  						
                   </p>                  
              	</li> <!-- /slide -->
 
@@ -608,14 +606,12 @@ a {
                     	<img src="images/avatars/avatar-2.jpg" alt="Author image">
                     	<div class="author-info">
                     		John Doe
-                    		<span>CEO, ABC Corp.</span>
+                    		<span>CS, HKUST Student</span>
                     	</div>
                   </div> 
 
                   <p>
-                  This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                  Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                  nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.    
+                  There are still some improvements needed, however, the overall performance is pretty good! 
                   </p>
                                          
                </li> <!-- /slide -->
@@ -631,102 +627,35 @@ a {
 
    <!-- faq
    ================================================== -->
-   <section id="faq">
+  <!-- <section id="faq">-->
    <!-- footer
    ================================================== -->
-   <footer>
+   
 
-   	<div class="footer-main">
-
-   		<div class="row">  
-
-	      	<div class="col-four tab-full mob-full footer-info">            
-
-	            <div class="footer-logo"></div>
-
-	            <p>
-		        	1600 Amphitheatre Parkway<br>
-            	Mountain View, CA 94043 US<br>
-		        	info@lhander.com &nbsp; +123-456-789
-		        	</p>
-
-		      </div> <!-- /footer-info -->
-
-	      	<div class="col-two tab-1-3 mob-1-2 site-links">
-
-	      		<h4>Site Links</h4>
-
-	      		<ul>
-	      			<li><a href="#">About Us</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">FAQ</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-					</ul>
-
-	      	</div> <!-- /site-links -->  
-
-	      	<div class="col-two tab-1-3 mob-1-2 social-links">
-
-	      		<h4>Social</h4>
-
-	      		<ul>
-	      			<li><a href="#">Twitter</a></li>
-						<li><a href="#">Facebook</a></li>
-						<li><a href="#">Dribbble</a></li>
-						<li><a href="#">Google+</a></li>
-						<li><a href="#">Skype</a></li>
-					</ul>
-	      	           	
-	      	</div> <!-- /social --> 
-
-	      	<div class="col-four tab-1-3 mob-full footer-subscribe">
-
-	      		<h4>Subscribe</h4>
-
-	      		<p>Keep yourself updated. Subscribe to our newsletter.</p>
-
-	      		<div class="subscribe-form">
-	      	
-	      			<form id="mc-form" class="group" novalidate="true">
-
-							<input type="email" value="" name="dEmail" class="email" id="mc-email" placeholder="type email &amp; hit enter" required=""> 
-	   		
-			   			<input type="submit" name="subscribe" >
-		   	
-		   				<label for="mc-email" class="subscribe-message"></label>
-			
-						</form>
-
-	      		</div>	      		
-	      	           	
-	      	</div> <!-- /subscribe -->         
-
-	      </div> <!-- /row -->
-
-   	</div> <!-- /footer-main -->
+   	
 
 
-      <div class="footer-bottom">
+        <div class="footer-bottom">
 
       	<div class="row">
 
-      		<div class="col-twelve">
+      		
 	      		<div class="copyright">
-		         	<span>© Copyright Lhander 2016.</span> 
-		         	<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>		         	
+		         	<span></span> 
+		         	<span>Design by <a href="">HKUST FYP Team, QUAN 1</a></span>		         	
 		         </div>
 
 		         <div id="go-top" style="display: block;">
 		            <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon ion-android-arrow-up"></i></a>
-		         </div>         
+		               
 	      	</div>
 
       	</div> <!-- /footer-bottom -->     	
 
       </div>
 
-   </footer>  
+   </footer> 
+   
 
    <div id="preloader"> 
     	<div id="loader"></div>

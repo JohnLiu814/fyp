@@ -55,10 +55,19 @@ if(isset($_POST['loginbtn'])){
 		$password = mysql_real_escape_string($_POST['password']);
 		$randomid = uniqid();
 		$password = md5($password); // hash password before storing 
-		$sql = "INSERT INTO users(username, id, modelnum, password) VALUES('$username', '$randomid', '0','$password')";
-		mysqli_query($db, $sql);
-		$sql2 = "CREATE TABLE $username (modelname VARCHAR(100))";
-		mysqli_query($db, $sql2);
+			
+		$checkSql = "SELECT COUNT(username) AS number FROM users WHERE username = '$username'";
+		$checkSqlResult = mysqli_query($db, $checkSql);
+		$checkSqlRow = mysqli_fetch_assoc($checkSqlResult);
+		if($checkSqlRow['number']==0){
+			$sql = "INSERT INTO users(username, id, modelnum, password) VALUES('$username', '$randomid', '0','$password')";
+			mysqli_query($db, $sql);
+			$sql2 = "CREATE TABLE $username (modelname VARCHAR(100))";
+			mysqli_query($db, $sql2);
+		}
+
+
+		
 		header("location: index.php");
 
 	}

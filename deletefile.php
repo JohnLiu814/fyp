@@ -41,7 +41,7 @@
 		}
 		
 		//print_r(array_values($checkArray));
-
+		echo $_SESSION['checkArray'];
 		
 		echo "<br>";
 		echo "load";
@@ -95,7 +95,7 @@
 		echo "<br>";
 		echo "load";
 		$_SESSION['display'] = 1;
-		header('Location: t8.php');
+		header('Location: t13.php');
 	}
 	else if(isset($_POST['delbtn'])){
 		session_start();
